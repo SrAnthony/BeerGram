@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Daily Posts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngFor="let post of posts" >
+    
+  	<ion-card>
+		<!-- Avatar -->
+		<ion-item color="green">
+		  <ion-avatar item-left>
+		    <img src={{post.user.avatar}} />
+		  </ion-avatar>
+		  <h2>{{post.user.name}}</h2>
+		  <p>{{post.user.bio}} - ID: {{post.user.id}}</p>
+		</ion-item>
+	    <!--=======-->
+
+	    <img src="{{post.img}}"/>
+
+	    <ion-card-content>
+	    	<p>{{post.desc}}</p>
+	    </ion-card-content>
+
+	    <ion-row>
+	      <ion-col col-3>
+	        <ion-item>
+	          <button ion-button icon-left clear (click)="newLike(post)">
+	            <ion-icon name="thumbs-up"></ion-icon>
+	            <div>{{post.likes}}</div>
+	          </button>
+	        </ion-item>
+	      </ion-col>
+	      <ion-col col-3>
+	        <ion-item>
+	          <button ion-button icon-left clear (click)="newComment(post)">
+	            <ion-icon name="text"></ion-icon>
+	            <div>{{post.comments}}</div>
+	          </button>
+	        </ion-item>
+	      </ion-col>
+	      <ion-col>
+			<ion-item>
+				<button ion-button icon-left clear (click)="presentProfileModal()">
+					<ion-icon name="beer"></ion-icon>
+		      		{{post.beer.name}}
+	      		</button>
+	      	</ion-item>
+	      </ion-col>
+	    </ion-row>
+
+	</ion-card>
+
+  </div>
+</ion-content>

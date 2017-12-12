@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Upload your photo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+	<button ion-button color="dark" large block icon-left (click)="takePic()">
+		<ion-icon name="camera"></ion-icon>
+		TAKE PICTURE
+	</button>
+	
+	<ion-card>
+		<ion-item>
+			<ion-label floating>Beer Name</ion-label>
+			<ion-input type="text" [(ngModel)]="beerName"></ion-input>
+		</ion-item>
+	</ion-card>
+
+	<ion-card>
+		<ion-item>
+			<ion-range min="1" max="5" step="1" pin="true" [(ngModel)]="beerRate">
+				<ion-icon range-left small name="star">1</ion-icon>
+				<ion-icon range-right name="star">5</ion-icon>
+			</ion-range>
+		</ion-item>
+	</ion-card>
+
+	<ion-row>
+		<ion-col col-6>
+			<ion-card>
+				<ion-item>
+					<ion-label floating>Price</ion-label>
+					<ion-input type="number" [(ngModel)]="beerPrice"></ion-input>
+				</ion-item>
+			</ion-card>
+		</ion-col>
+		<ion-col col-6>
+			<ion-card>
+				<ion-item>
+					<ion-label floating>Alcohol</ion-label>
+					<ion-input min="0" max="100" type="number" [(ngModel)]="beerAbv"></ion-input>
+				</ion-item>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+
+	<ion-card>
+		<ion-item>
+			<ion-label floating>Description</ion-label>
+			<ion-input type="text" [(ngModel)]="beerDesc"></ion-input>
+		</ion-item>
+	</ion-card>
+
+	<ion-row>
+		<ion-col col-6>
+			<button ion-button color="secondary" block icon-left (click)="addBrewer()">
+				<ion-icon name="person"></ion-icon>
+				ADD BREWER
+			</button>
+		</ion-col>
+		<ion-col col-6>
+			<button ion-button color="primary" block icon-left (click)="upload()">
+				<ion-icon name="beer"></ion-icon>
+				POST BEER!
+			</button>
+		</ion-col>
+	</ion-row>
+
+</ion-content>

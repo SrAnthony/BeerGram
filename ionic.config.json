@@ -1,0 +1,8 @@
+{
+  "name": "BeerGramRemastered",
+  "app_id": "77ded7dc",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
